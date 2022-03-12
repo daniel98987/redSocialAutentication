@@ -25,6 +25,14 @@ class DatabaseSeeder extends Seeder
 			'email' => "dzambrano863@gmail.com", 
 			'password' => 'daniel'
 		),
+		array(
+
+			'nickname' => 'hugo12', 
+			'name' => 'Hugo Andrés', 
+			'surnames' => 'Pantoja Benavides', 
+			'email' => "hugo@gmail.com", 
+			'password' => 'hugo'
+		),
 		
 
 	);
