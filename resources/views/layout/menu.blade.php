@@ -18,24 +18,6 @@
           <li class="nav-item">
           <a href="{{ url('/logout') }}" type="submit" class="btn btn-link nav-link" style="display:inline;cursor:pointer">Cerrar sesion</a>
           </li>
-
-
-
-
-
-       
-
-
-
-
-
-
-
-
-
-
-
-
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Dropdown

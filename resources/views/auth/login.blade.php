@@ -21,7 +21,7 @@
 
         <div class="logo"> <img src="https://e7.pngegg.com/pngimages/491/932/png-clipart-social-media-marketing-facebook-telegram-social-network-letter-b-blue-text.png" alt=""> </div>
         <div class="text-center mt-4 name"> Red social app </div>
-        <form class="p-3 mt-3" method="POST" action="">
+        <form class="p-3 mt-3" method="POST" action="/login">
 
             @csrf
             <div class="form-field d-flex align-items-center">
@@ -30,7 +30,7 @@
             </div>
             <div class="form-field d-flex align-items-center">
                 <span class="fas fa-key"></span>
-                <input value="daniel" type="password" name="password" id="pwd" placeholder="Password">
+                <input type="password" name="password" id="pwd" placeholder="Password">
             </div>
             <p class=""></p>
             <button type="submit" class="btn mt-3">Login</button>

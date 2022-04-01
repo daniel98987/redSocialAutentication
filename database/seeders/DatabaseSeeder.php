@@ -16,33 +16,43 @@ class DatabaseSeeder extends Seeder
      */
     private $arrayDeUsuarios = array(
 	
-        
-		array(
+      array(
 
-			'nickname' => 'dani22', 
-			'name' => 'Daniel Alejandro', 
-			'surnames' => 'Zambrano Portilla', 
-			'email' => "dzambrano863@gmail.com", 
-			'password' => 'daniel'
-		),
-		array(
-
-			'nickname' => 'hugo12', 
-			'name' => 'Hugo Andrés', 
-			'surnames' => 'Pantoja Benavides', 
-			'email' => "hugo@gmail.com", 
-			'password' => 'hugo'
-		),
-		
-
+        'nickname' => 'dani22', 
+        'name' => 'Daniel Alejandro', 
+        'surnames' => 'Zambrano Portilla', 
+        'email' => "daniel@gmail.com", 
+        'password' => 'hola'
+      ),
+        array(
+  
+        'nickname' => 'hugo122', 
+        'name' => 'Hugo Fernando', 
+        'surnames' => 'Zambrano Mora', 
+        'email' => "hugo@gmail.com", 
+        'password' => 'hola'
+      ),
+      array(
+  
+        'nickname' => 'yuli122', 
+        'name' => 'Yuliana Alejandra', 
+        'surnames' => 'Morales Torres', 
+        'email' => "yuliana@gmail.com", 
+        'password' => 'hola'
+      ), array(
+  
+        'nickname' => 'santi22', 
+        'name' => 'Santiago Rosero', 
+        'surnames' => 'Morales Federico', 
+        'email' => "santiago@gmail.com", 
+        'password' => 'hola'
+      )
 	);
   
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-
         self::seedCatalog(); 
-
         $this->command->info('Tabla catálogo inicializada con datos!');
     }
     
@@ -51,23 +61,14 @@ class DatabaseSeeder extends Seeder
   
         // \App\Models\User::factory(10)->create();
         DB::table('users')->delete();
-
         foreach( $this->arrayDeUsuarios as $usuario ) {
             $p = new User();
-      
             $p->nickname = $usuario['nickname'];
-
             $p->name = $usuario['name'];
-
             $p->surnames = $usuario['surnames'];
-
             $p->email = $usuario['email'];
-
             $p->password =  bcrypt( $usuario['password']);;
-
-
             $p->save();
-
       }
     }
 }

@@ -1,0 +1,166 @@
+.principal-chat {
+    position: fixed;
+    display: flex;
+    width: 300px;
+    min-height: 300px;
+    height: 50vh;
+    background-color: white;
+    bottom: 0;
+    right: 400px;
+    z-index: 100000;
+}
+.close {
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    display: block;
+    background-color: white;
+    top: -30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    color: black;
+}
+.container-buttons {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+.buttons-control {
+    background-color: transparent;
+    display: flex;
+    border: none;
+    width: 20px;
+    height: 20px;
+    color: black;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.chat-content {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+ul {
+    padding: 10px 20px;
+    
+}
+.chat-content-g {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    bottom: 33px;
+    margin: 0;
+    padding: 0;
+    /* background-color: green; */
+    overflow-y: scroll;
+}
+.chat-section {
+    position: absolute;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+}
+.chat-box {
+    /* background-color: blue; */
+}
+.input {
+    width: calc(90% - 20px);
+    border: none;
+    padding: 5px 15px;
+    background-color: rgba(236, 233, 233, 0.726);
+    border-radius: 20px;
+    margin: 10px 5px 10px 10px;
+}
+.input:focus {
+    border: none;
+    outline: none;
+}
+.send {
+    cursor: pointer;
+}
+.amigo {
+    background-color: rgba(243, 69, 69, 0.671);
+    width: 80%;
+    padding: 2px 5px;
+    border-radius: 10px 10px 10px 0;
+    list-style: none;
+    margin-bottom: 10px;
+}
+.propio {
+    background-color: rgba(136, 255, 0, 0.61);
+    width: 80%;
+    margin-left: 20%;
+    padding: 2px 5px;
+    border-radius: 10px 10px 0 10px;
+    list-style: none;
+    margin-bottom: 10px;
+}
+.change-show {
+    min-height: 0px;
+    height: 0px;
+}
+.name-friend {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 10px;
+    user-select: none;
+}
+/* ***************************************************************************** */
+/* Para el chat de todos los amigos */
+/* ***************************************************************************** */
+.principal-chat-amigos {
+    position: fixed;
+    display: flex;
+    width: 300px;
+    min-height: 300px;
+    height: 50vh;
+    background-color: white;
+    bottom: 0;
+    right: 50px;
+    z-index: 100000;
+}
+.chat-content-amigos {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+.chat-content-g-amigos {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    bottom: 33px;
+    margin: 0;
+    padding: 0;
+    /* background-color: green; */
+    overflow-y: scroll;
+    height: 100%;
+}
+.open-chat {
+    background-color: rgba(185, 185, 185, 0.212);
+    border: none;
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: 10px;
+    text-align: left;
+    margin: 5px 0;
+}
+.open-chat:hover {
+    background-color: rgba(185, 185, 185, 0.404);
+}
+.transparent {
+    width: 0;
+    height: 0;
+    background-color: transparent;
+    border: none;
+}

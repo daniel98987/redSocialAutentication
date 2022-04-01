@@ -23,23 +23,21 @@ Route::get('/', function () {
 
 
 Route::get('/register', [LoginController::class, 'createRegister'])
-
     ->name('register.index');
+    
 Route::post('/register', [LoginController::class, 'postCreateUser'])
-
     ->name('register.index');
-Route::get('/login', [LoginController::class, 'create'])
 
+Route::get('/login', [LoginController::class, 'create'])
     ->name('login.index');
 
 Route::post('/login', [LoginController::class, 'store'])
     ->name('login.store');
 
-
 Route::get('/amigos', [redSocial::class, 'getAmigos'])
 ->middleware('auth');
-Route::get('/grupos', function () {
 
+Route::get('/grupos', function () {
     return view('grupos');
 })
 ->middleware('auth');
