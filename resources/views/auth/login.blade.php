@@ -26,11 +26,11 @@
             @csrf
             <div class="form-field d-flex align-items-center">
                 <span class="far fa-user"></span>
-                <input value="dzambrano863@gmail.com" type="email" name="email" id="email" placeholder="email">
+                <input value="daniel@gmail.com" type="email" name="email" id="email" placeholder="email">
             </div>
             <div class="form-field d-flex align-items-center">
                 <span class="fas fa-key"></span>
-                <input type="password" name="password" id="pwd" placeholder="Password">
+                <input type="password" value="hola" name="password" id="pwd" placeholder="Password">
             </div>
             <p class=""></p>
             <button type="submit" class="btn mt-3">Login</button>

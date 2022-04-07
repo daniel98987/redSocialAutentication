@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('amistades', function (Blueprint $table) {
             $table->id();
             $table->integer('notificacionEnvio');
-            $table->string('estado');
+            $table->boolean('rented')->default(false);
             $table->unsignedBigInteger('idUsuarioPrincipal');
             $table->unsignedBigInteger('idUsuarioAmigo');
             $table->timestamps();
