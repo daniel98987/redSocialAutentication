@@ -44,7 +44,28 @@ class DatabaseSeeder extends Seeder
         'nickname' => 'santi22', 
         'name' => 'Santiago Rosero', 
         'surnames' => 'Morales Federico', 
-        'email' => "santiago@gmail.com", 
+        'email' => "santiagsdo@gmail.com", 
+        'password' => 'hola'
+      ), array(
+  
+        'nickname' => 'camti22', 
+        'name' => 'Marcela Rosero', 
+        'surnames' => 'Morales Federico', 
+        'email' => "santiafafgo@gmail.com", 
+        'password' => 'hola'
+      ), array(
+  
+        'nickname' => 'JUanRosero', 
+        'name' => 'JUanRosero', 
+        'surnames' => 'Morales Federico', 
+        'email' => "JUanRosesro@gmail.com", 
+        'password' => 'hola'
+      ), array(
+  
+        'nickname' => 'mora22', 
+        'name' => 'mora22 Rosero', 
+        'surnames' => 'mora22 Federico', 
+        'email' => "mora22sd@gmail.com", 
         'password' => 'hola'
       )
 	);

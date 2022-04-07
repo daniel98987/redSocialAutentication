@@ -13,6 +13,9 @@
             <a class="nav-link" href="/amigos">Amigos</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="/solicitud">Socitudes</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="/grupos">Grupos</a>
           </li>
           <li class="nav-item">
