@@ -6,11 +6,11 @@
     $idPropio = Auth::id();
     $chatUsuarios = Amistades::join('users','amistades.idUsuarioAmigo','=','users.id')->get()
     ->where("idUsuarioPrincipal",$idPropio)
-    ->where("estado","activo");
+    ->where("rented",1);
     if(sizeof($chatUsuarios)===0){
         $chatUsuarios = Amistades::join('users','amistades.idUsuarioPrincipal','=','users.id')->get()
         ->where("idUsuarioAmigo",$idPropio)
-        ->where("estado","activo");
+        ->where("rented",1);
     }
     
 ?>
