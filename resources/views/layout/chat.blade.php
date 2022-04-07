@@ -26,14 +26,13 @@ use Illuminate\Support\Facades\Auth;
     }
 ?>
 <div id="principalChat" class="principal-chat">
-    <div class="close">
+    <div id="close" class="close">
         <div class="name-friend">
             {{$nameAmigo}}
         </div>
-        <div class="container-buttons">
+        <div id="container-buttons" class="container-buttons">
             <button id="button-close" class="buttons-control">-</button>
-            <button class="buttons-control">x</button>
-
+            <button id="button-close-chat" class="buttons-control">x</button>
         </div>
     </div>
     <div id="row">

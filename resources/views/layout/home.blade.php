@@ -31,18 +31,20 @@
         <script>
             let ip = 'localhost';
             let port = '3000';
-            let active = false;
+            let active = localStorage.getItem("active") ? localStorage.getItem("active")==='true' ? true : false : false;
+            let activeClose = localStorage.getItem("activeClose") ? localStorage.getItem("activeClose")==='true' ? true : false : false;
+            let activeCloseFriends = localStorage.getItem("activeCloseFriends") ? localStorage.getItem("activeCloseFriends")==='true' ? true : false : false;
+            document.getElementById('button-close').click();
             var socket = io(`${ip}:${port}`);
             var socketId = '';
             var user = {!! auth()->user()->toJson() !!};
             var userPropio = user.id;
             var userAmigo = localStorage.getItem('userAmigo') ? localStorage.getItem('userAmigo') : 0;
-            // if(userPropio!==1){
-            //     userAmigo=1;
-            // }
-            document.getElementById('principalChat').classList.add('change-show');
-            document.getElementById('chat-content-g').classList.add('change-show');
-            document.getElementById('chat-section').classList.add('change-show');
+            if(active===false){
+                document.getElementById('principalChat').classList.add('change-show');
+                document.getElementById('chat-content-g').classList.add('change-show');
+                document.getElementById('chat-section').classList.add('change-show');
+            }
             document.getElementById('button-close').addEventListener('click',()=>{
                 if(active){
                     // document.getElementById('principalChat').classList.add('principal-chat');
@@ -50,14 +52,55 @@
                     document.getElementById('chat-content-g').classList.add('change-show');
                     document.getElementById('chat-section').classList.add('change-show');
                     active = false;
+                    localStorage.setItem("active",active);
                 }else{
                     // document.getElementById('principalChat').classList.add('principal-chat');
                     document.getElementById('principalChat').classList.remove('change-show');
                     document.getElementById('chat-content-g').classList.remove('change-show');
                     document.getElementById('chat-section').classList.remove('change-show');
                     active = true;
+                    localStorage.setItem("active",active);
                 }
             })
+            if(!activeClose){
+                document.getElementById('principalChat').classList.add('transparent');
+                document.getElementById('chat-content-g').classList.add('transparent');
+                document.getElementById('chat-section').classList.add('transparent');
+                document.getElementById('close').classList.add('transparent');
+            }else{
+                document.getElementById('principalChat').classList.remove('transparent');
+                document.getElementById('chat-content-g').classList.remove('transparent');
+                document.getElementById('chat-section').classList.remove('transparent');
+                document.getElementById('close').classList.remove('transparent');
+            }
+            document.getElementById('button-close-chat').addEventListener('click',()=>{
+                if(activeClose){
+                    document.getElementById('principalChat').classList.add('transparent');
+                    document.getElementById('chat-content-g').classList.add('transparent');
+                    document.getElementById('chat-section').classList.add('transparent');
+                    document.getElementById('close').classList.add('transparent');
+                }else{
+                    document.getElementById('principalChat').classList.remove('transparent');
+                    document.getElementById('chat-content-g').classList.remove('transparent');
+                    document.getElementById('chat-section').classList.remove('transparent');
+                    document.getElementById('close').classList.remove('transparent');
+                }
+                localStorage.setItem("activeClose",!activeClose);
+            })
+
+            if(!activeCloseFriends){
+                document.getElementById('principalChatAmigos').classList.add('change-show');
+            }
+            document.getElementById('button-close-amigos').addEventListener('click',()=>{
+                if(activeCloseFriends){
+                    document.getElementById('principalChatAmigos').classList.add('change-show');
+                }else{
+                    document.getElementById('principalChatAmigos').classList.remove('change-show');
+                }
+                activeCloseFriends = !activeCloseFriends;
+                localStorage.setItem("activeCloseFriends",activeCloseFriends);
+            })
+
             window.addEventListener('load',()=>{
                 // document.getElementById('principalChat').classList.remove('principal-chat');
                 const chat = document.getElementById("chat-content-g");
@@ -84,7 +127,7 @@
             })
             socket.on('idSocket',async (id)=>{
                 socketId = await id;
-                console.log("socketId ",socketId)
+                console.log("socketId",socketId)
                 socket.on(id,(res)=>{
                     const messageChat = document.getElementById("chat-content");
                     var p = document.createElement('li');
@@ -106,6 +149,8 @@
                 return false
             })
             function openChat(id) {
+                localStorage.setItem("activeClose",true);
+                localStorage.setItem("active",true);
                 var a = document.createElement("a");
                 a.href = `/grupos?idAmigo=${id}`;
                 localStorage.setItem("userAmigo",id)

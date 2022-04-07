@@ -104,10 +104,6 @@ ul {
     list-style: none;
     margin-bottom: 10px;
 }
-.change-show {
-    min-height: 0px;
-    height: 0px;
-}
 .name-friend {
     white-space: nowrap;
     overflow: hidden;
@@ -159,8 +155,13 @@ ul {
     background-color: rgba(185, 185, 185, 0.404);
 }
 .transparent {
+    display: none;
     width: 0;
     height: 0;
     background-color: transparent;
     border: none;
+}
+.change-show {
+    min-height: 0px;
+    height: 0px;
 }

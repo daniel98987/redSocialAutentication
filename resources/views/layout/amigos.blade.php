@@ -15,7 +15,7 @@
     
 ?>
 <div id="principalChatAmigos" class="principal-chat-amigos">
-    <div class="close">
+    <div id="closeFriends" class="close">
         <div class="name-friend">
             Chats
         </div>
