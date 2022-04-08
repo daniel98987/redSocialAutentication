@@ -17,16 +17,18 @@ $nameAmigo = "";
 ?>
 
 <body style="background-color: #9B9B9B;">
-    <div class="container-fluid" style="background-color: #85FFBD;
-background-image: linear-gradient(45deg, #85FFBD 0%, #7dff83 100%);
-;padding: 5px;">
-        <div class="row justify-content-center" style="margin-top: 90px;">
-            <div class="col-8" style="text-align: center;">
-                <img src="/images/user8.png" width="120" height="120">
-                <span> <b style="font-size: larger;">Daniel Alejandro Zambrano Portilla </b> </p></span>
-                <p style="text-align: start;"> daniel@gmail.com </p>
-            </div>
+    <div class="container-fluid" style="background-color: #767070;
 
+;padding: 5px;">
+        <div class="row justify-content-center" style="margin-top: 90px;color: #00d1ff;">
+            <div class="col-12" style="text-align: center;">
+                <img src="/images/user8.png" width="120" height="120">
+        
+            </div>
+            <div class="col-12" style="text-align: center;">
+            <span> <b style="font-size: larger;">{{ auth()->user()->name}} </b> </p></span>
+                <p style="text-align: center;"> {{ auth()->user()->email}}</b>   </p>
+            </div>
         </div>
         <div class="row justify-content-center">
             <div class="col-8">

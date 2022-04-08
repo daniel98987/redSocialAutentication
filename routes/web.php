@@ -24,9 +24,20 @@ Route::get('', [PublicacionesController::class, 'getPublicaciones'])
 
 Route::get('/register', [LoginController::class, 'createRegister'])
     ->name('register.index');
+
+
+
+
 Route::post('/register', [LoginController::class, 'postCreateUser'])
     ->name('register.index');
 
+
+
+
+
+
+
+    
 Route::get('/login', [LoginController::class, 'create'])
     ->name('login.index');
 

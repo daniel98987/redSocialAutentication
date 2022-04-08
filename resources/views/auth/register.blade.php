@@ -58,15 +58,15 @@
 
                                         <div class="form-outline mb-4">
                                             <input type="text" id="email" name="email" class="form-control form-control-lg" />
-                                            <label class="form-label" for="email">Email ID</label>
+                                            <label class="form-label" for="email">Email </label>
                                         </div>
                                         <div class="form-outline mb-4">
-                                            <input type="text" id="password"   name="password" class="form-control form-control-lg" />
+                                            <input type="password" id="password"   name="password" class="form-control form-control-lg" />
                                             <label class="form-label" for="password">Contraseña</label>
                                         </div>
 
                                         <div class="d-flex justify-content-end pt-3">
-                                            <button type="reset" class="btn btn-light btn-lg">Reset all</button>
+                                            
                                             <button type="submit" class="btn btn-warning btn-lg ms-2">Submit form</button>
                                         </div>
                                     </form>
