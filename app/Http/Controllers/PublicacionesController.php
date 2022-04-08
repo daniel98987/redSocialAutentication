@@ -85,4 +85,17 @@ class PublicacionesController extends Controller
         }
 
     }
+
+    public function destroy($id)
+    {
+        DB::delete('delete from publicaciones where id = ?', [$id]);
+
+
+        notify()->success('Publicacion Eliminada');
+        return redirect()->action(
+            [PublicacionesController::class, 'getPublicaciones']
+      
+        );
+    
+    }
 }

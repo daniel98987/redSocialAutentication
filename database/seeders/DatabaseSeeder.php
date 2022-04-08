@@ -34,8 +34,8 @@ class DatabaseSeeder extends Seeder
       ),
       array(
   
-        'nickname' => 'yuli122', 
-        'name' => 'Yuliana Alejandra', 
+        'nickname' => 'alexa122', 
+        'name' => 'Alexa Alejandra', 
         'surnames' => 'Morales Torres', 
         'email' => "yuliana@gmail.com", 
         'password' => 'hola'
@@ -48,22 +48,22 @@ class DatabaseSeeder extends Seeder
         'password' => 'hola'
       ), array(
   
-        'nickname' => 'camti22', 
+        'nickname' => 'Camilo Pantoja', 
         'name' => 'Marcela Rosero', 
         'surnames' => 'Morales Federico', 
-        'email' => "santiafafgo@gmail.com", 
+        'email' => "camilo@gmail.com", 
         'password' => 'hola'
       ), array(
   
-        'nickname' => 'JUanRosero', 
-        'name' => 'JUanRosero', 
+        'nickname' => 'juan122', 
+        'name' => 'Juan Lopez', 
         'surnames' => 'Morales Federico', 
-        'email' => "JUanRosesro@gmail.com", 
+        'email' => "juan@gmail.com", 
         'password' => 'hola'
       ), array(
   
         'nickname' => 'mora22', 
-        'name' => 'mora22 Rosero', 
+        'name' => 'Morales Rosero', 
         'surnames' => 'mora22 Federico', 
         'email' => "mora22sd@gmail.com", 
         'password' => 'hola'

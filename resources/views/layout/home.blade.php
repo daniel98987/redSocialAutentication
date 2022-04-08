@@ -18,6 +18,7 @@
     <link href="{{ url('/assets/bootstrap/css/chat.css') }}" rel="stylesheet">
     <link href="{{ url('/assets/personal/app.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    @notifyCss
     </head>
     <body>
         <script src="{{ url('/assets/bootstrap/js/socket.io.js') }}"></script>
@@ -163,5 +164,7 @@
                 a.click();  
             }
         </script>
+         <x:notify-messages />
+        @notifyJs
     </body>
 </html>

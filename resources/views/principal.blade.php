@@ -21,8 +21,11 @@ $nameAmigo = "";
 
 ;padding: 5px;">
         <div class="row justify-content-center" style="margin-top: 90px;color: #00d1ff;">
-            <div class="col-12" style="text-align: center;">
-                <img src="/images/user8.png" width="120" height="120">
+            <div class="col-8" style="
+               display: flex; justify-content:center;
+               
+                ">
+                <img src="/images/user8.png" width="120" height="120" >
         
             </div>
             <div class="col-12" style="text-align: center;">
@@ -36,6 +39,7 @@ $nameAmigo = "";
                     <h5 class="card-header">Agregar Publicacion</h5>
                     <div class="card-body">
                         {{ Auth::user()->name }}
+                        
                         <form action="/publicacion/create/{{$idPropio}}" method="POST">
                             {{csrf_field()}}
 
@@ -59,9 +63,24 @@ $nameAmigo = "";
                 <div class="card" style="margin-top: 10px;">
                     <h5 class="card-header">
                         <div class="row">
-                            <div class="col-6">Nick: {{$publi->nickname}} </div>
-                            <div class="col-6">Fecha: {{$publi->created_at}} {{$publi->id}} </div>
+                            <div class="col-4">Nick: {{$publi->nickname}} </div>
+                            <div class="col-4">Fecha: {{$publi->created_at}} {{$publi->id}} </div>
+                            <div class="col-4">
+                            <form action="/publicaciones/{{$publi->id}}" method="POST">
+                                    {{ csrf_field() }}
+                                    {{ method_field('delete') }}
+                                    <button class="btn btn-danger" type="submit"> Eliminar Publicacion</button> 
+
+
+                                </form>
+                            
+                            
+                            
+                            
+                            
+                            </div>
                         </div>
+                        
                     </h5>
                     <div class="card-body">
                         <p class="card-text">{{$publi->textoPublicacion}}</p>

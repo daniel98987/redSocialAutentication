@@ -45,6 +45,7 @@ class redSocial extends Controller
         $p->idUsuarioPrincipal = Auth::id();
         $p->idUsuarioAmigo =$idAmigo;
         $result = $p->save();
+        notify()->success('Solicitud enviada');
         return redirect()->action(
             [redSocial::class, 'getAmigosNo']
       
@@ -86,7 +87,7 @@ class redSocial extends Controller
         ->where('amistades.idUsuarioAmigo', '=', Auth::id())
         ->delete();
 
-
+        notify()->success('Solicitud cancelada');
         return redirect()->action([redSocial::class, 'solicitudes']);
     }
     public function destroyAmistad($id)
@@ -101,7 +102,7 @@ class redSocial extends Controller
         ->where('amistades.idUsuarioPrincipal', '=',  Auth::id())
         ->where('amistades.idUsuarioAmigo', '=', $id)
         ->delete();
-
+        notify()->success('Solicitud cancelada');
         return redirect()->action([redSocial::class, 'getAmigosNo']);
     }
     public function destroyPendiente($id)
@@ -132,7 +133,7 @@ class redSocial extends Controller
         $putpeli->save();
 
 
-
+        notify()->success('Amistad confirmada');
         return redirect()->action([redSocial::class, 'solicitudes']);
     }
 

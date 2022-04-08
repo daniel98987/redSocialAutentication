@@ -25,7 +25,7 @@ class LoginController extends Controller
             ]);
 
         } 
-
+        notify()->success('Bienvenido!!');
         return redirect()->action([PublicacionesController::class, 'getPublicaciones']);
     
     }
@@ -51,7 +51,7 @@ class LoginController extends Controller
       
         $result=$p->save();
         if($result){
-    
+         
             return redirect()->action([LoginController::class, 'create']);
 
         }else{

@@ -70,6 +70,10 @@ Route::put('publicacion/dislike/{id}', [PublicacionesController::class, 'putDisl
 Route::put('publicacion/photo/{id}', [PublicacionesController::class, 'putDislikes'])
 ->middleware('auth');
 
+
+Route::delete('/publicaciones/{id}', [PublicacionesController::class, 'destroy'])
+->middleware('auth');
+
 Route::get('/amigos', [redSocial::class, 'getAmigosNo'])
 ->middleware('auth');
 Route::get('/solicitud', [redSocial::class, 'solicitudes'])
