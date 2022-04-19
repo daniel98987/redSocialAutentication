@@ -15,7 +15,7 @@
             <a class="nav-link" href="/amigos">Amigos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/solicitud">Socitudes</a>
+            <a class="nav-link" href="/solicitud">Solicitudes</a>
           </li>
 
 

@@ -34,7 +34,11 @@
                 <input type="password" value="hola" name="password" id="pwd" placeholder="Password">
             </div>
             <p class=""></p>
-            <button type="submit" class="btn btn-success mt-3">Login</button>
+            <button type="submit" class="btn btn-success mt-3">Iniciar sesión</button>
+            <div style="display: flex;justify-content:center;align-items: center;gap:10px;margin-top:20px;">
+                ¿Aún no tienes cuenta?
+                <a href="/register" style="color: blue;">Registrate</a>
+            </div>
         </form>
 
     </div>
