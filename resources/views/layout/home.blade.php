@@ -18,7 +18,7 @@
     <link href="{{ url('/assets/bootstrap/css/chat.css') }}" rel="stylesheet">
     <link href="{{ url('/assets/personal/app.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    @notifyCss
+    <!-- @notifyCss -->
     </head>
     <body>
         <script src="{{ url('/assets/bootstrap/js/socket.io.js') }}"></script>
@@ -153,7 +153,7 @@
                 localStorage.setItem("activeClose",true);
                 localStorage.setItem("active",true);
                 var a = document.createElement("a");
-                a.href = `/grupos?idAmigo=${id}`;
+                a.href = `/?idAmigo=${id}`;
                 localStorage.setItem("userAmigo",id)
                 // document.getElementById('principalChat').classList.remove('change-show');
                 // document.getElementById('chat-content-g').classList.remove('change-show');
