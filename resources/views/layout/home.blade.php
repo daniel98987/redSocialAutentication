@@ -20,7 +20,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     @notifyCss
     </head>
-    <body>
+    <body style="background-color: #fbfbfb;">
         <script src="{{ url('/assets/bootstrap/js/socket.io.js') }}"></script>
         @include('layout.menu')
         @include('layout.chat')

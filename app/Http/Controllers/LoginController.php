@@ -5,39 +5,46 @@ namespace App\Http\Controllers;
 use App\Models\User;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    public function create() {
-        
+    public function create()
+    {
+
         return view('auth.login');
     }
-    public function createRegister() {
-        
+    public function createRegister()
+    {
+
         return view('auth.register');
     }
 
-    public function store() {
-        
-        if(auth()->attempt(request(['email', 'password'])) == false) {
+    public function store()
+    {
+
+        if (auth()->attempt(request(['email', 'password'])) == false) {
             return back()->withErrors([
                 'message' => 'The email or password is incorrect, please try again',
             ]);
-
-        } 
+        }
         notify()->success('Bienvenido!!');
-        return redirect()->action([PublicacionesController::class, 'getPublicaciones']);
-    
+        
+        return redirect()->action(
+            [PublicacionesController::class, 'profile'],
+            ['id' =>  Auth::id()]);
     }
 
-    public function destroy() {
+    public function destroy()
+    {
 
         auth()->logout();
 
         return redirect()->to('/login');
     }
-    
-    public function postCreateUser(Request $req){
+
+    public function postCreateUser(Request $req)
+    {
 
 
 
@@ -47,17 +54,14 @@ class LoginController extends Controller
         $p->name =  ($req->name);
         $p->surnames = $req->surnames;
         $p->email = $req->email;
-        $p->password =bcrypt($req->password) ;
-      
-        $result=$p->save();
-        if($result){
-         
+        $p->password = bcrypt($req->password);
+
+        $result = $p->save();
+        if ($result) {
+
             return redirect()->action([LoginController::class, 'create']);
-
-        }else{
-            return ["result"=>"Data no guardada"];
-
+        } else {
+            return ["result" => "Data no guardada"];
         }
-
     }
 }
