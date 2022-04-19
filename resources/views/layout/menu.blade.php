@@ -1,13 +1,15 @@
-<nav class="navbar navbar-dark bg-dark navbar-expand-lg bg-light">
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg bg-light p-4" style="background-color: #213e35!important;">
   <div class="container container-fluid">
-      <a class="navbar-brand" href="#">Red Social</a>
+  <div class="logo" style="margin-right: 30px;"> <img src="/images/tree.jpeg" alt=""> </div>
+      <a class="navbar-brand" href="/profile/{{ auth()->user()->id}}" >{{ auth()->user()->name}}</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+       
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+            <a class="nav-link active" aria-current="page" href="/muro">Muro</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/amigos">Amigos</a>
@@ -15,27 +17,12 @@
           <li class="nav-item">
             <a class="nav-link" href="/solicitud">Socitudes</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/grupos">Grupos</a>
-          </li>
-          <li class="nav-item">
-          <a href="{{ url('/logout') }}" type="submit" class="btn btn-link nav-link" style="display:inline;cursor:pointer">Cerrar sesion</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
+
+
+ 
         </ul>
         <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Buscar</button>
+        <a href="{{ url('/logout') }}" type="submit" class="btn btn-danger nav-link" style="color: white;cursor:pointer">Cerrar sesion</a>
         </form>
       </div>
   </div>

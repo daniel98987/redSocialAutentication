@@ -27,16 +27,16 @@ class DatabaseSeeder extends Seeder
         array(
   
         'nickname' => 'hugo122', 
-        'name' => 'Hugo Fernando', 
-        'surnames' => 'Zambrano Mora', 
+        'name' => 'Hugo Andrés', 
+        'surnames' => 'Pantoja Benavides', 
         'email' => "hugo@gmail.com", 
         'password' => 'hola'
       ),
       array(
   
-        'nickname' => 'alexa122', 
-        'name' => 'Alexa Alejandra', 
-        'surnames' => 'Morales Torres', 
+        'nickname' => 'yuliana122', 
+        'name' => 'Yuliana Estefany', 
+        'surnames' => 'Rosero Morales', 
         'email' => "yuliana@gmail.com", 
         'password' => 'hola'
       ), array(

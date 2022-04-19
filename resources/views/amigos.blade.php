@@ -44,106 +44,64 @@ $result = $amistadesAmigos->merge($amistadesPrincipales);
 
 
 ?>
+
 <div class="container">
-  <div class="row">
-    <div class="col-12 mt-4">
-      <div class="card  bg-info mb-3">
-        <div class="card-header"><b>Lista de amigos: </b> {{ auth()->user()->name}} </div>
-        <div class="card-body">
-          <div class="col-12 mt-3">
-            <p style="text-align: center;">
-        
-            <div class="col-12 mt-3">
+  <div class="row mb-4 mt-4 p-5" style="border-radius: 20px;border: 3px solid green">
+    <h2 style="text-align: center;font-size: larger;" class="mb-5"><b>Lista de amigos: </b> {{ auth()->user()->name}}</h2>
+    <table class="table " class="">
+      <thead>
+        <tr>
+          <th scope="col">nickname</th>
+          <th scope="col">nombres</th>
+          <th scope="col">apellidos</th>
 
 
-              <div class="container">
-                <div class="row">
-                  <div class="col-12 mt-3">
-                    <p style="text-align: center;">
-                      <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
-                        Lista Amigos
-                      </button>
-                    <div class="col-12 mt-3">
+        </tr>
+      </thead>
+      <tbody>
 
-                      <div class="row justify-content-center">
-                        <div class="col-6 " style="text-align: center;">
-                          <div style="min-height: 120px;" style="text-align: center;">
-                            <div class="collapse collapse-horizontal" id="collapseWidthExample">
-                              <div class="card card-body" style="width: 430px;">
-                                Lista de amigos usuario Armando Portilla
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <table class="table " class="">
-                          <thead>
-                            <tr>
-                              <th scope="col">nickname</th>
-                              <th scope="col">nombres</th>
-                              <th scope="col">apellidos</th>
+        @foreach ($result as $usuario)
+        <tr>
+          <td>{{$usuario->nickname}}</td>
+          <td>{{$usuario->name}}</td>
+          <td>{{$usuario->surnames}}</td>
+          <td>
+
+            <form action="/solicitud/eliminarAmistad/{{$usuario->id}}" method="POST">
+              {{csrf_field()}}
+              {{method_field('delete')}}
+              <button type="submit" class="btn  btn-danger">Eliminar amistad</button>
+            </form>
 
 
-                            </tr>
-                          </thead>
-                          <tbody>
-
-                            @foreach ($result as $usuario)
-                            <tr>
-                              <td>{{$usuario->nickname}}</td>
-                              <td>{{$usuario->name}}</td>
-                              <td>{{$usuario->surnames}}</td>
-                              <td>
-
-                                <form action="/solicitud/eliminarAmistad/{{$usuario->id}}" method="POST">
-                                  {{csrf_field()}}
-                                  {{method_field('delete')}}
-                                  <button type="submit" class="btn  btn-danger">Eliminar amistad</button>
-                                </form>
-
-
-                              </td>
+          </td>
 
 
 
-                            </tr>
+        </tr>
 
-                            @endforeach
+        @endforeach
 
 
 
 
-                          </tbody>
-                        </table>
+      </tbody>
+    </table>
 
 
 
-                      </div>
-                    </div>
-                    </p>
+  </div>
+
+  <div class="row mb-4 mt-4 p-5" style="border-radius: 20px;border: 3px solid green">
+    <div class="col-12 mt-3">
+      <p style="text-align: center;">
+
+      <h2 style="text-align: center;font-size: larger;"> <b> Personas que quizás conozcas</b> </h2>
+      <div class="col-12 mt-3">
 
 
-                  </div>
-                  <div class="col-12 mt-3">
-                    <p style="text-align: center;">
-                      <button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
-                        Personas que quizas conozcas
-                      </button>
-                    </p>
-                    <div class="row justify-content-center">
-                      <div class="col-6 " style="text-align: center;">
-                        <div style="min-height: 120px;" style="text-align: center;">
-                          <div class="collapse collapse-horizontal" id="collapseWidthExample">
-                            <div class="card card-body" style="width: 430px;">
-                              Lista de amigos usuario Armando Portilla
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <table class="table " class="">
+        <div class="row">
+        <table class="table " class="">
                         <thead>
                           <tr>
                             <th scope="col">nickname</th>
@@ -187,27 +145,17 @@ $result = $amistadesAmigos->merge($amistadesPrincipales);
 
 
 
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-            </p>
-
-
-          </div>
 
         </div>
       </div>
+      </p>
+
+
     </div>
-
-
 
   </div>
 
 </div>
-
 
 
 

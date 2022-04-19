@@ -13,14 +13,15 @@
     <title>Videoclub</title>
 </head>
 
-<body>
+<body class="login">
 
+    <img src="/images/fondo.png" alt="" class="arbol">
 
-
+    
     <div class="wrapper">
 
-        <div class="logo"> <img src="https://e7.pngegg.com/pngimages/491/932/png-clipart-social-media-marketing-facebook-telegram-social-network-letter-b-blue-text.png" alt=""> </div>
-        <div class="text-center mt-4 name"> Red social app </div>
+        <div class="logo"> <img src="/images/tree.jpeg" alt=""> </div>
+        <div style="font-size: 30px;font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;" class="text-center mt-4 name"> <span style="color: #52a98c;">E</span><span style="color: #16463D;">C</span><span style="color: #33DABA;">O</span><span style="color: #16463D;">-RED NARIÑO </span> </div>
         <form class="p-3 mt-3" method="POST" action="/login">
 
             @csrf
@@ -33,7 +34,7 @@
                 <input type="password" value="hola" name="password" id="pwd" placeholder="Password">
             </div>
             <p class=""></p>
-            <button type="submit" class="btn mt-3">Login</button>
+            <button type="submit" class="btn btn-success mt-3">Login</button>
         </form>
 
     </div>
